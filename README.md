@@ -32,7 +32,7 @@ This repo exists as a portfolio/demo project. If you have zero PLC/TIA knowledge
 
 The UI exposes three workflows.
 
-## Screenshots (redacted)
+> Screenshots are redacted to remove internal project names/paths, partner/customer references, equipment identifiers, and network details.
 
 These screenshots are redacted to remove internal project names/paths, partner/customer references, equipment identifiers, and network details.
 
