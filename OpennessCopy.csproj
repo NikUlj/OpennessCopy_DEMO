@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{C38F6976-6F74-40D9-A7C1-6F49212E54C8}</ProjectGuid>
+        <OutputType>WinExe</OutputType>
+        <RootNamespace>OpennessCopy</RootNamespace>
+        <AssemblyName>OpennessCopy</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <Deterministic>true</Deterministic>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Siemens.Engineering">
+          <HintPath>..\..\..\..\Program Files\Siemens\Automation\Portal V20\PublicAPI\V20\Siemens.Engineering.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Siemens.Engineering.Hmi">
+          <HintPath>..\..\..\..\Program Files\Siemens\Automation\Portal V20\PublicAPI\V20\Siemens.Engineering.Hmi.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Xml.Linq"/>
+        <Reference Include="System.Data.DataSetExtensions"/>
+        <Reference Include="Microsoft.CSharp"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Deployment"/>
+        <Reference Include="System.Drawing"/>
+        <Reference Include="System.Net.Http"/>
+        <Reference Include="System.Windows.Forms"/>
+        <Reference Include="System.Xml"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Forms\ArchiveLoadingForm.cs" />
+        <Compile Include="Forms\BlockCopy\BlockGroupSelectionForm.cs" />
+        <Compile Include="Forms\BlockCopy\BlockProcessingConfigForm.cs" />
+        <Compile Include="Forms\BlockCopy\PlcSelectionForm.cs" />
+        <Compile Include="Forms\BlockCopy\TagTableConfigurationForm.cs" />
+        <Compile Include="Forms\BlockCopy\TagTableSelectionForm.cs" />
+        <Compile Include="Forms\Conveyor\ConveyorConfigForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Conveyor\ConveyorConfigForm.Designer.cs">
+          <DependentUpon>ConveyorConfigForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\HardwareCopy\DeviceLoadingForm.cs" />
+        <Compile Include="Forms\HardwareCopy\ETModuleConfigurationForm.cs" />
+        <Compile Include="Forms\HardwareCopy\HardwareDeviceSelectionForm.cs" />
+        <Compile Include="Forms\HardwareCopy\HardwareProcessingConfigForm.cs" />
+        <Compile Include="Forms\HardwareCopy\HardwareProjectSelectionForm.cs" />
+        <Compile Include="Forms\MainForm.BlockWorkflow.cs">
+          <DependentUpon>MainForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\MainForm.ConveyorWorkflow.cs">
+          <DependentUpon>MainForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\MainForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\MainForm.Designer.cs">
+          <DependentUpon>MainForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\MainForm.HardwareWorkflow.cs">
+          <DependentUpon>MainForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\SimplePasswordForm.cs" />
+        <Compile Include="Forms\SimplePLCSelectionForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\SimplePLCSelectionForm.Designer.cs">
+          <DependentUpon>SimplePLCSelectionForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\Conveyor\BlockSelectionForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Conveyor\BlockSelectionForm.Designer.cs">
+          <DependentUpon>BlockSelectionForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\Conveyor\DbConfigForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Conveyor\DbConfigForm.Designer.cs">
+          <DependentUpon>DbConfigForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Models\ConveyorConfig.cs" />
+        <Compile Include="Models\DataTransferObjects.cs" />
+        <Compile Include="Models\FindReplacePair.cs" />
+        <Compile Include="Models\DbConfig.cs" />
+        <Compile Include="Models\DbConfigKey.cs" />
+        <Compile Include="Models\DbVariableSpec.cs" />
+        <Compile Include="Models\PlcBlockInfo.cs" />
+        <Compile Include="Models\TagAddressReplacePair.cs" />
+        <Compile Include="Models\WorkflowProgress.cs" />
+        <Compile Include="Program.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Services\BlockCopy\BlockXmlProcessingService.cs" />
+        <Compile Include="Services\BlockCopy\ExportService.cs" />
+        <Compile Include="Services\BlockCopy\ImportService.cs" />
+        <Compile Include="Services\BlockCopy\STADataExtractor.cs" />
+        <Compile Include="Services\BlockCopy\WorkflowSTAThread.cs" />
+        <Compile Include="Services\CodeBuilders\ConveyorWorkflowStaThread.cs" />
+        <Compile Include="Services\CodeBuilders\ConveyorDbProcessor.cs" />
+        <Compile Include="Services\CodeBuilders\GeneratedArtifact.cs" />
+        <Compile Include="Services\CodeBuilders\GeneratedArtifactImportService.cs" />
+        <Compile Include="Services\CodeBuilders\MultiLingualText.cs" />
+        <Compile Include="Services\CodeBuilders\SimaticSd\IdentifierFormattingUtils.cs" />
+        <Compile Include="Services\CodeBuilders\SimaticSd\StatusDbEditor.cs" />
+        <Compile Include="Services\CodeBuilders\TagTables\LogicalAddressGenerator.cs" />
+        <Compile Include="Services\CodeBuilders\Templates\ConveyorRefBuilder.cs" />
+        <Compile Include="Services\DependencyManagementService.cs" />
+        <Compile Include="Services\HardwareCopy\AMLProcessingService.cs" />
+        <Compile Include="Services\HardwareCopy\HardwareExportService.cs" />
+        <Compile Include="Services\HardwareCopy\HardwareMasterCopyService.cs" />
+        <Compile Include="Services\HardwareCopy\HardwareWorkflowEventIndex.cs" />
+        <Compile Include="Services\HardwareCopy\HardwareWorkflowSTAThread.cs" />
+        <Compile Include="Services\HardwareCopy\STAHardwareDataExtractor.cs" />
+        <Compile Include="Services\BlockSelection\PlcBlockEnumerationService.cs" />
+        <Compile Include="Services\BlockSelection\PlcSearchHelpers.cs" />
+        <Compile Include="Services\CodeBuilders\SimaticSd\SimaticSdBuilder.cs" />
+        <Compile Include="Services\CodeBuilders\SimaticSd\SimaticSdBuilder.Types.cs">
+          <DependentUpon>SimaticSdBuilder.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Services\CodeBuilders\SimaticSd\SimaticSdBuilder.TextResource.cs">
+          <DependentUpon>SimaticSdBuilder.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Services\CodeBuilders\SimaticSd\SimaticSdBuilder.Block.cs">
+          <DependentUpon>SimaticSdBuilder.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Services\CodeBuilders\SimaticSd\SimaticSdBuilder.Instance.cs">
+          <DependentUpon>SimaticSdBuilder.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Services\CodeBuilders\SimaticSd\SimaticSdBuilder.Udt.cs">
+          <DependentUpon>SimaticSdBuilder.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Services\CodeBuilders\SimaticSd\SimaticSdDbEditor.cs" />
+        <Compile Include="Services\CodeBuilders\SimaticSd\LadderNetworkBuilder.cs" />
+        <Compile Include="Services\CodeBuilders\SimaticSd\NetworkBodyBuilder.cs" />
+        <Compile Include="Services\CodeBuilders\EmbeddedTemplateRepository.cs" />
+        <Compile Include="Services\CodeBuilders\GeneratedArtifactFactory.cs" />
+        <Compile Include="Services\CodeBuilders\TagTables\PlcTagTablePlan.cs" />
+        <Compile Include="Services\CodeBuilders\TagTables\TagTableGenerationService.cs" />
+        <Compile Include="Services\CodeBuilders\XML\XMLTemplateRenderer.cs" />
+        <Compile Include="Services\CodeBuilders\SimaticSd\SimaticSdArtifactKinds.cs" />
+        <Compile Include="Services\CodeBuilders\SimaticSd\FileNetworkTemplateRepository.cs" />
+        <Compile Include="Services\CodeBuilders\SimaticSd\INetworkTemplateRepository.cs" />
+        <Compile Include="Services\CodeBuilders\SimaticSd\NetworkTemplateRenderer.cs" />
+        <Compile Include="Services\IWorkflowThread.cs" />
+        <Compile Include="Services\PlcManagementService.cs" />
+        <Compile Include="Services\StaTaskQueue.cs" />
+        <Compile Include="Services\SecurityManagementService.cs" />
+        <Compile Include="Services\TagCopyService.cs" />
+        <Compile Include="Services\ValidationService.cs" />
+        <Compile Include="Services\WorkflowResourceManager.cs" />
+        <Compile Include="Utils\DataCacheUtility.cs" />
+        <Compile Include="Utils\Logger.cs" />
+        <Compile Include="Utils\MiscUtil.cs" />
+        <Compile Include="Utils\TagAddressAnalyzer.cs" />
+        <EmbeddedResource Include="Forms\Conveyor\ConveyorConfigForm.resx">
+          <DependentUpon>ConveyorConfigForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Forms\MainForm.resx">
+          <DependentUpon>MainForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Forms\Conveyor\BlockSelectionForm.resx">
+          <DependentUpon>BlockSelectionForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Forms\Conveyor\DbConfigForm.resx">
+          <DependentUpon>DbConfigForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Properties\Resources.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+            <SubType>Designer</SubType>
+        </EmbeddedResource>
+        <Compile Include="Properties\Resources.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Resources.resx</DependentUpon>
+        </Compile>
+        <None Include="Properties\Settings.settings">
+            <Generator>SettingsSingleFileGenerator</Generator>
+            <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+        </None>
+        <Compile Include="Properties\Settings.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Settings.settings</DependentUpon>
+            <DesignTimeSharedInput>True</DesignTimeSharedInput>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="Services\CodeBuilders\Templates\**\*.txt" />
+        <EmbeddedResource Include="Services\CodeBuilders\Templates\**\*.xml" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Services\CodeBuilders\TemplateBuilders\" />
+      <Folder Include="Services\CodeBuilders\Templates\Conveyor\Code\" />
+      <Folder Include="Services\CodeBuilders\Templates\Conveyor\SD\" />
+      <Folder Include="Services\CodeBuilders\Templates\Conveyor\XML\" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+</Project>
