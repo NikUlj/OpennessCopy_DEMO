@@ -34,8 +34,6 @@ The UI exposes three workflows.
 
 > Screenshots are redacted to remove internal project names/paths, partner/customer references, equipment identifiers, and network details.
 
-These screenshots are redacted to remove internal project names/paths, partner/customer references, equipment identifiers, and network details.
-
 Main window (workflow selection + live log)
 
 ![Main window (workflow selection + live log)](docs/media/main_window.png)
